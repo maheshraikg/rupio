@@ -592,3 +592,8 @@
 592|Takes a few seconds and keeps your month accurate.
 593|Off
 594|Other time
+595|No email app found. {0} copied, write to us from any app.
+596|Help
+597|Contact support
+598|Report a bug
+599|Tell us what went wrong; app and phone details are added

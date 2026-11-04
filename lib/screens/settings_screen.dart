@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../app/files.dart';
+import '../app/native.dart';
 import '../app/notifications.dart';
 import '../app/scope.dart';
 import '../app/store.dart';
@@ -16,6 +17,9 @@ import 'investments_screen.dart' show refreshFundPrices;
 import 'recurring_screen.dart';
 import '../l10n/strings.dart';
 import '../sync/sms_sync.dart';
+
+/// Where support mail and bug reports go.
+const supportEmail = 'maheshraikg@gmail.com';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -34,6 +38,35 @@ class SettingsScreen extends StatelessWidget {
     } catch (e) {
       messenger.showSnackBar(
         SnackBar(content: Text(tr('Something went wrong: {0}', [e]))),
+      );
+    }
+  }
+
+  Future<void> _email(BuildContext context, {required bool bug}) async {
+    final messenger = ScaffoldMessenger.of(context);
+    final info = await Native.deviceInfo();
+    final details = [
+      'Rupio ${info['app'] ?? ''}',
+      if (info['android'] != null) 'Android ${info['android']}',
+      if (info['device'] != null) info['device']!,
+    ].join(' · ');
+    final opened = await Native.sendEmail(
+      to: supportEmail,
+      subject: bug ? 'Rupio bug report' : 'Rupio support',
+      body: bug
+          ? 'What happened:\n\n\nWhat I expected:\n\n\nSteps to repeat it:\n1. \n\n---\n$details\n'
+          : '\n\n---\n$details\n',
+    );
+    if (!opened) {
+      await Clipboard.setData(const ClipboardData(text: supportEmail));
+      messenger.showSnackBar(
+        SnackBar(
+          content: Text(
+            tr('No email app found. {0} copied, write to us from any app.', [
+              supportEmail,
+            ]),
+          ),
+        ),
       );
     }
   }
@@ -349,6 +382,20 @@ class SettingsScreen extends StatelessWidget {
                   mimeType: 'application/pdf',
                 );
               }),
+            ),
+          ]),
+          group(tr('Help'), [
+            tile(
+              Icons.mail_outline,
+              tr('Contact support'),
+              supportEmail,
+              () => _email(context, bug: false),
+            ),
+            tile(
+              Icons.bug_report_outlined,
+              tr('Report a bug'),
+              tr('Tell us what went wrong; app and phone details are added'),
+              () => _email(context, bug: true),
             ),
           ]),
           group(tr('About'), [

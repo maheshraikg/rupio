@@ -5,6 +5,7 @@ import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import android.provider.Telephony
@@ -122,6 +123,22 @@ class MainActivity : FlutterActivity() {
                         result.success(null)
                     }
                     "openApp" -> result.success(openApp(call.argument<String>("package")!!))
+                    "sendEmail" -> result.success(
+                        sendEmail(
+                            call.argument<String>("to")!!,
+                            call.argument<String>("subject")!!,
+                            call.argument<String>("body")!!,
+                        )
+                    )
+                    "deviceInfo" -> result.success(
+                        mapOf(
+                            "app" to (try {
+                                packageManager.getPackageInfo(packageName, 0).versionName
+                            } catch (e: Exception) { null } ?: "?"),
+                            "android" to Build.VERSION.RELEASE,
+                            "device" to "${Build.MANUFACTURER} ${Build.MODEL}",
+                        )
+                    )
                     "isInstalled" -> result.success(
                         packageManager.getLaunchIntentForPackage(
                             call.argument<String>("package")!!
@@ -202,5 +219,19 @@ class MainActivity : FlutterActivity() {
             }
         }
         return out
+    }
+
+    /** Opens the user's email app with a draft; false when there is none. */
+    private fun sendEmail(to: String, subject: String, body: String): Boolean {
+        val intent = Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:"))
+            .putExtra(Intent.EXTRA_EMAIL, arrayOf(to))
+            .putExtra(Intent.EXTRA_SUBJECT, subject)
+            .putExtra(Intent.EXTRA_TEXT, body)
+        return try {
+            startActivity(intent)
+            true
+        } catch (e: ActivityNotFoundException) {
+            false
+        }
     }
 }

@@ -16,6 +16,36 @@ class Native {
         false;
   }
 
+  /// Opens the email app with a draft; false when no email app is set up.
+  static Future<bool> sendEmail({
+    required String to,
+    required String subject,
+    required String body,
+  }) async {
+    if (!supported) return false;
+    try {
+      return await _channel.invokeMethod<bool>('sendEmail', {
+            'to': to,
+            'subject': subject,
+            'body': body,
+          }) ??
+          false;
+    } on Exception {
+      return false;
+    }
+  }
+
+  /// App version, Android version and phone model, for bug reports.
+  static Future<Map<String, String>> deviceInfo() async {
+    if (!supported) return const {};
+    try {
+      final m = await _channel.invokeMapMethod<String, String>('deviceInfo');
+      return m ?? const {};
+    } on Exception {
+      return const {};
+    }
+  }
+
   static Future<bool> isInstalled(String package) async {
     if (!supported) return false;
     try {
