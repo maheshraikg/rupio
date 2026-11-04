@@ -7,6 +7,7 @@ import 'package:rupeetrack/app/store.dart';
 import 'package:rupeetrack/l10n/strings.dart';
 import 'package:rupeetrack/main.dart';
 import 'package:rupeetrack/models/models.dart';
+import 'package:rupeetrack/screens/quick_add_sheet.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
@@ -56,6 +57,49 @@ void main() {
     expect(find.text('₹250'), findsWidgets); // spent this month (hero)
     expect(find.text('₹9,750'), findsNWidgets(2)); // net worth + accounts
     expect(store.lastCategory, 'Food');
+  });
+
+  testWidgets('an entry can be deleted from its edit screen, with undo', (
+    tester,
+  ) async {
+    final store = FinanceStore.memory();
+    await store.addAccount('SBI Savings', AccountKind.savings, 1000000);
+    await tester.pumpWidget(RupeeTrackApp(store: store, background: false));
+    await tester.tap(find.byType(FloatingActionButton));
+    await tester.pumpAndSettle();
+    await tester.enterText(find.byType(TextField).first, '250');
+    await tester.tap(find.text('Save'));
+    await tester.pumpAndSettle();
+    final t = store.ledger.txns.single;
+
+    await tester.pumpWidget(
+      AppScope(
+        store: store,
+        child: MaterialApp(
+          home: Scaffold(
+            body: Builder(
+              builder: (context) => TextButton(
+                onPressed: () => showQuickAdd(context, initial: t),
+                child: const Text('open'),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+    await tester.tap(find.text('open'));
+    await tester.pumpAndSettle();
+    await tester.ensureVisible(find.text('Delete'));
+    await tester.tap(find.text('Delete'));
+    await tester.pumpAndSettle();
+    expect(find.text('Delete this entry?'), findsOneWidget);
+    await tester.tap(find.widgetWithText(FilledButton, 'Delete'));
+    await tester.pumpAndSettle();
+    expect(store.ledger.txns, isEmpty);
+
+    await tester.tap(find.text('Undo'));
+    await tester.pumpAndSettle();
+    expect(store.ledger.txns.single.id, t.id);
   });
 
   testWidgets('quick add rejects an empty amount', (tester) async {

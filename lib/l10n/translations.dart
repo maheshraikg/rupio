@@ -594,6 +594,8 @@ const Map<String, Map<String, String>> translations = {
     'Contact support': 'सपोर्ट से संपर्क करें',
     'Report a bug': 'बग की रिपोर्ट करें',
     'Tell us what went wrong; app and phone details are added': 'बताएं क्या गलत हुआ; ऐप और फ़ोन की जानकारी अपने आप जुड़ जाती है',
+    'Delete this entry?': 'यह एंट्री हटाएं?',
+    '{0} of {1} on {2}': '{2} को {0}: {1}',
   },
   'kn': {
     '{0} bill due today': '{0} ಬಿಲ್ ಇಂದು ಪಾವತಿಸಬೇಕು',
@@ -1186,6 +1188,8 @@ const Map<String, Map<String, String>> translations = {
     'Contact support': 'ಸಪೋರ್ಟ್ ಸಂಪರ್ಕಿಸಿ',
     'Report a bug': 'ದೋಷ ವರದಿ ಮಾಡಿ',
     'Tell us what went wrong; app and phone details are added': 'ಏನು ತಪ್ಪಾಯಿತು ಎಂದು ತಿಳಿಸಿ; ಆ್ಯಪ್ ಮತ್ತು ಫೋನ್ ವಿವರಗಳು ಸೇರುತ್ತವೆ',
+    'Delete this entry?': 'ಈ ನಮೂದನ್ನು ಅಳಿಸುವುದೇ?',
+    '{0} of {1} on {2}': '{2} ರಂದು {0}: {1}',
   },
   'ml': {
     '{0} bill due today': '{0} ബിൽ ഇന്ന് അടയ്ക്കണം',
@@ -1778,6 +1782,8 @@ const Map<String, Map<String, String>> translations = {
     'Contact support': 'സപ്പോർട്ടുമായി ബന്ധപ്പെടുക',
     'Report a bug': 'ബഗ് റിപ്പോർട്ട് ചെയ്യുക',
     'Tell us what went wrong; app and phone details are added': 'എന്താണ് തെറ്റിയതെന്ന് പറയൂ; ആപ്പ്, ഫോൺ വിവരങ്ങൾ ചേർക്കും',
+    'Delete this entry?': 'ഈ എൻട്രി ഇല്ലാതാക്കണോ?',
+    '{0} of {1} on {2}': '{2} ന് {0}: {1}',
   },
   'ta': {
     '{0} bill due today': '{0} பில் இன்று செலுத்த வேண்டும்',
@@ -2370,6 +2376,8 @@ const Map<String, Map<String, String>> translations = {
     'Contact support': 'ஆதரவைத் தொடர்புகொள்ளவும்',
     'Report a bug': 'பிழையைப் புகாரளிக்கவும்',
     'Tell us what went wrong; app and phone details are added': 'என்ன தவறு நடந்தது என்று சொல்லுங்கள்; செயலி மற்றும் ஃபோன் விவரங்கள் சேர்க்கப்படும்',
+    'Delete this entry?': 'இந்தப் பதிவை நீக்கவா?',
+    '{0} of {1} on {2}': '{2} அன்று {0}: {1}',
   },
   'te': {
     '{0} bill due today': '{0} బిల్లు ఈరోజు చెల్లించాలి',
@@ -2962,5 +2970,7 @@ const Map<String, Map<String, String>> translations = {
     'Contact support': 'సపోర్ట్‌ను సంప్రదించండి',
     'Report a bug': 'బగ్‌ను నివేదించండి',
     'Tell us what went wrong; app and phone details are added': 'ఏమి తప్పు జరిగిందో చెప్పండి; యాప్, ఫోన్ వివరాలు జోడించబడతాయి',
+    'Delete this entry?': 'ఈ ఎంట్రీని తొలగించాలా?',
+    '{0} of {1} on {2}': '{2}న {0}: {1}',
   },
 };

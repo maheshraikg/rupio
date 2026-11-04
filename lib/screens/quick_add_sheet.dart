@@ -263,6 +263,54 @@ class _QuickAddSheetState extends State<QuickAddSheet> {
     );
   }
 
+  Future<void> _delete() async {
+    final t = widget.initial!;
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(tr('Delete this entry?')),
+        content: Text(
+          tr('{0} of {1} on {2}', [
+            t.type.label,
+            formatRupees(t.amount),
+            relativeDate(t.date),
+          ]),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, false),
+            child: Text(tr('Cancel')),
+          ),
+          FilledButton(
+            style: FilledButton.styleFrom(
+              backgroundColor: Theme.of(context).colorScheme.error,
+              foregroundColor: Theme.of(context).colorScheme.onError,
+            ),
+            onPressed: () => Navigator.pop(context, true),
+            child: Text(tr('Delete')),
+          ),
+        ],
+      ),
+    );
+    if (ok != true || !mounted) return;
+    final store = context.store;
+    final messenger = ScaffoldMessenger.of(context);
+    await store.deleteTxn(t.id);
+    if (!mounted) return;
+    Navigator.pop(context);
+    messenger
+      ..clearSnackBars()
+      ..showSnackBar(
+        SnackBar(
+          content: Text(tr('Deleted {0}', [formatRupees(t.amount)])),
+          action: SnackBarAction(
+            label: tr('Undo'),
+            onPressed: () => store.restoreTxn(t),
+          ),
+        ),
+      );
+  }
+
   Future<void> _addReceipt() async {
     final camera = await showModalBottomSheet<bool>(
       context: context,
@@ -609,6 +657,18 @@ class _QuickAddSheetState extends State<QuickAddSheet> {
                   icon: Icons.check_rounded,
                   label: _editing ? tr('Update') : tr('Save'),
                 ),
+                if (_editing)
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8),
+                    child: TextButton.icon(
+                      onPressed: _delete,
+                      style: TextButton.styleFrom(
+                        foregroundColor: scheme.error,
+                      ),
+                      icon: const Icon(Icons.delete_outline),
+                      label: Text(tr('Delete')),
+                    ),
+                  ),
               ],
             ),
           ),

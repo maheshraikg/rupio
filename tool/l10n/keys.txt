@@ -597,3 +597,5 @@
 597|Contact support
 598|Report a bug
 599|Tell us what went wrong; app and phone details are added
+600|Delete this entry?
+601|{0} of {1} on {2}
