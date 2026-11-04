@@ -50,6 +50,14 @@ Delete entries, accounts, cards, loans or goals inside the app at any time.
 Uninstalling the app, or clearing its storage in Android settings, deletes
 everything it stored. Backups you exported yourself are not affected.
 
+## Contacting support
+
+Contact support and Report a bug in Settings open your own email app with
+a draft addressed to the developer. A bug report draft includes the app
+version, Android version and phone model so the problem can be found. You
+see the whole email before sending it, and nothing is sent unless you send
+it yourself.
+
 ## Children
 
 The app is meant for adults managing their own money and is not directed

@@ -64,7 +64,7 @@ Play Console → **Create app**:
 ## 4. App content (Policy → App content)
 
 - **Privacy policy:** the public link to `PRIVACY.md`, for example
-  `https://github.com/maheshraikg/rupio/blob/main/PRIVACY.md`
+  `https://maheshraikg.github.io/rupio/privacy.html`
 - **App access:** All functionality is available without special access.
 - **Ads:** No, the app does not contain ads (if ads are added later, answer
   Yes and update the privacy policy and Data safety form).
