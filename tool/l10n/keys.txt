@@ -1,0 +1,594 @@
+1|{0} bill due today
+2|{0} bill due in {1} days
+3|{0} to pay by {1}. Tap to record the payment.
+4|This {0} is recorded automatically today.
+5|Bill and payment reminders
+6|Credit card due dates and recurring payments
+7|Today
+8|Yesterday
+9|This file is not a Rupio backup
+10|The backup file is damaged
+11|Spent in {0}
+12|{0}: {1} was due {2} ago
+13|{0}: {1} is due today
+14|{0}: {1} due in {2}
+15|{0}: {1}% of the limit used (over {2}%)
+16|{0}: EMI of {1} was due {2} ago
+17|{0}: EMI of {1} is due today
+18|{0}: EMI of {1} due in {2}
+19|{0}: {1} over the {2} budget
+20|{0}: {1}% of the budget used, {2} left
+21|1 day
+22|{0} days
+23|Rupio
+24|Home
+25|Activity
+26|Cards
+27|More
+28|Add entry
+29|SMS
+30|Email
+31|Statement
+32|Enter an amount greater than zero
+33|Choose the account or card you paid from
+34|Choose an investment
+35|Choose the account that received the money
+36|Choose both accounts
+37|Choose two different accounts
+38|Choose the card that was paid
+39|Choose the account or card that got the refund
+40|Accounts
+41|Transfer between accounts
+42|Add account
+43|Add your savings accounts (SBI, Canara Bank, …), cash in hand and UPI wallets.
+44|Total balance
+45|Saved this month
+46|Could not read: {0}
+47|Something went wrong: {0}
+48|Allow "SMS" for Rupio in the settings that opened, then tap Scan again.
+49|SMS access was not allowed.
+50|SMS: {0}
+51|Statement: {0}
+52|Gmail ({0}): {1} emails checked · {2}{3}
+53|Auto-detect
+54|Fill cards and accounts from your bank messages
+55|Spends, refunds, bill amounts, due dates and payments are read on this phone. Nothing is uploaded.
+56|Bank SMS
+57|Reads the last {0} days of bank SMS, then new ones each time you open the app.
+58|On · last checked {0}. New SMS are read each time you open the app.
+59|Scan now
+60|Allow SMS & scan
+61|Turn off
+62|Found in your messages
+63|1 message
+64|{0} messages
+65|{0} spent
+66|{0} available
+67|balance {0}
+68|Ignore
+69|Add
+70|Statement PDF
+71|Choose a card or bank statement PDF, or share one to Rupio from Gmail, WhatsApp or Files. Password-protected statements are fine.
+72|Choose statement PDF
+73|Gmail (optional)
+74|Read-only access to bank alert emails and statement PDFs. Google asks you to allow it.
+75|Needs a one-time Google Cloud setup for this app build.
+76|Connect Gmail & scan
+77|Scan Gmail
+78|Disconnect
+79|How to set up
+80|Set up Gmail access
+81|Google only lets apps read Gmail after the developer registers them. For personal use this is free:\n\n1. In console.cloud.google.com create a project and enable the Gmail API.\n2. OAuth consent screen: External, add the gmail.readonly scope and add your Gmail address (up to 100 people) as test users.\n3. Credentials: create an "Android" OAuth client with package com.rupio.app and the app's SHA-1 (see the README), and a "Web application" client.\n4. Build the app with the web client id: in the GitHub repository add an Actions variable GMAIL_WEB_CLIENT_ID.\n\nUntil then, statement PDFs can be shared to Rupio from the Gmail app.
+82|OK
+83|this PDF does not look like a bank or card statement
+84|statement PDF
+85|Statement password
+86|Password
+87|That password did not open the file
+88|Often the first 4 letters of your name + date of birth (e.g. RAHU0105). See your bank's email.
+89|Cancel
+90|Open
+91|Card statement
+92|Bank statement
+93|{0}{1} · {2} transactions
+94|Bank
+95|This card is not in Rupio yet. Add it (with its last digits) from Auto-detect, then import the statement again.
+96|This account is not in Rupio yet. Add it (with its last digits) from Auto-detect, then import the statement again.
+97|{0} new entries
+98|{0} already in the app (skipped)
+99|Bill: {0} due {1}
+100|Import
+101|{0} budget
+102|Monthly limit
+103|You will be warned at 80% and when it is crossed.
+104|Remove
+105|Save
+106|Budgets
+107|{0} · left to spend
+108|{0} of {1} used
+109|Your budgets
+110|Pick a category
+111|Add budget
+112|{0} this month
+113|Credit cards
+114|Add card
+115|Add your credit cards to track spending, limits and payment due dates, with reminders before every bill.
+116|Find my cards from SMS
+117|Total owed
+118|Bills due
+119|Used
+120|Overdue since {0}
+121|Due today
+122|Due {0} · {1} days
+123|Next due {0}
+124|Outstanding
+125|Limit {0}
+126|{0}% of limit used
+127|Bill to pay
+128|Spent this cycle
+129|Pay bill
+130|Enter a name
+131|Enter a valid balance
+132|Account digits must be 3 to 6 numbers
+133|Edit account
+134|Cash
+135|Wallet
+136|Name
+137|e.g. SBI Savings
+138|e.g. Cash
+139|e.g. Paytm wallet
+140|Current balance
+141|Last 4 digits of account (optional)
+142|Lets Rupio match bank SMS to this account
+143|Changing the balance keeps all transactions; the starting balance is adjusted so the total matches.
+144|Enter the card name
+145|Last four digits must be 4 numbers
+146|Enter the credit limit
+147|Enter a valid outstanding amount
+148|31 / last
+149|Add credit card
+150|Edit card
+151|Card name
+152|e.g. HDFC Millennia
+153|Last 4 digits (optional)
+154|Credit limit
+155|Statement day
+156|Due day
+157|Amount owed now (optional)
+158|Amount owed now
+159|Your bank last reported {0} available. Leave "amount owed" empty and it is worked out from the limit.
+160|Enter a valid amount invested
+161|Enter a valid current value
+162|Add investment
+163|Edit investment
+164|Type
+165|e.g. Nifty 50 index fund
+166|Amount invested so far (optional)
+167|Invested before adding it here
+168|Current value (optional)
+169|Already invested? Enter the total you have put in and today's value (from your passbook, fund statement or app) to see your gain straight away. Add new money later with “Invest”; it is kept out of your spending.
+170|Enter a valid value
+171|Current value
+172|Value today
+173|Check your fund statement, broker app or passbook. This is your own figure, not a live market price.
+174|Savings goals
+175|Add goal
+176|Save first,
+177|then buy.
+178|Emergency fund
+179|New phone or laptop
+180|Bike, trip or wedding
+181|Add a goal
+182|Saved so far
+183|of {0}
+184|Delete {0}?
+185|Your accounts are not changed.
+186|Edit
+187|Take money out
+188|Delete
+189|{0} of {1}
+190|By {0}
+191|Goal reached
+192|Still needed
+193|Put aside
+194|{0} / month
+195|Add money
+196|Add to {0}
+197|Enter a valid amount
+198|More than what is saved
+199|Enter the target amount
+200|Enter a valid amount saved
+201|Edit goal
+202|Goal
+203|e.g. Emergency fund
+204|Target amount
+205|Already saved (optional)
+206|Target date (optional)
+207|Remove date
+208|This cannot be undone.
+209|Its 1 entry will be deleted too, and every total will be recalculated. This cannot be undone.
+210|Its {0} entries will be deleted too, and every total will be recalculated. This cannot be undone.
+211|{0} deleted
+212|Balance
+213|In this month
+214|Out this month
+215|Spent this month
+216|Due {0}
+217|Bill
+218|Add spend
+219|Invested
+220|Not set
+221|Your bank said the balance was {0} on {1}; Rupio shows {2}.
+222|Use bank balance
+223|No transactions yet.
+224|Opening amount owed
+225|Opening balance
+226|Each bar is one day. Tap a bar to see the amount.
+227|Each bar is one month. Tap a month below to see its days.
+228|All time
+229|Each bar is one year. Tap a year below to see its months.
+230|Insights
+231|Expense
+232|Income
+233|Settings
+234|Previous
+235|Next
+236|earned
+237|spent
+238|All
+239|Found {0} in your bank messages
+240|Expenses
+241|See all
+242|No income yet
+243|No expenses yet
+244|Tap + to add one
+245|{0} left after spending
+246|{0} more spent than earned
+247|Set a budget ›
+248|{0} left of {1} budget
+249|{0} over budget
+250|Net worth
+251|Cards owed
+252|Investments
+253|EMIs per month
+254|Pay
+255|Know where every\n
+256|rupee goes.
+257|Log a spend in seconds
+258|Card bills, EMIs and goals in one place
+259|Private and offline. No sign-up
+260|Add bank account or cash
+261|Could not read the file: {0}
+262|Imported {0} transactions
+263|Import statement
+264|1. Which account or card is it for?
+265|2. Choose the CSV file
+266|Download the statement as CSV (or Excel saved as CSV) from your net banking. Debit/Credit or Amount columns are detected automatically.
+267|Choose file
+268|3. Review
+269|New
+270|Already in app
+271|Skipped
+272|Money out {0} · money in {1}
+273|Categories are guessed from the description; tap any entry later to change it.
+274|Import {0} transactions
+275|…and {0} more
+276|without spending
+277|{0}% less
+278|{0}% more
+279|than this time last month
+280|average spend per day
+281|Spending pace
+282|Total spent so far in {0}, day by day
+283|This month
+284|Last month
+285|Income vs spending
+286|Spent
+287|Where it went
+288|Add this month's salary or income to see where it goes.
+289|EMIs
+290|Spending
+291|Left
+292|{0}% of your income goes to EMIs
+293|{0}% of your income is spent
+294|Out of every ₹100 you earned this month, ₹{0} is left.
+295|You spent more than you earned this month.
+296|Where your income goes
+297|Income this month: {0}
+298|Fetching latest NAVs from AMFI…
+299|No linked funds to update
+300|Updated {0} funds
+301|Could not reach AMFI. Check your internet.
+302|Update fund prices
+303|Add your mutual funds, SIPs, stocks, PPF, FDs, NPS, gold and more. Money you invest is kept out of your spending.
+304|Portfolio value
+305|Total gain
+306|Gain includes only holdings with a current value.
+307|Allocation
+308|Holdings
+309|Values you type are your own figures. Linked mutual funds use the daily NAV published by AMFI.
+310|Add today’s value to see returns
+311|{0} · {1} units
+312|Gain
+313|Yearly (XIRR)
+314|Dividends / interest received: {0}
+315|Update value
+316|NAV linked
+317|Link NAV
+318|Could not download the fund list from AMFI. Check your internet and try again.
+319|Pick a fund and enter the units you hold
+320|Link to daily NAV
+321|Value = units × latest NAV published by AMFI.
+322|Fund name or scheme code
+323|NAV {0} · {1}
+324|Choose another fund
+325|Code {0} · NAV {1}
+326|Units you hold
+327|From your fund statement or app
+328|Unlink
+329|Link fund
+330|Loans & EMIs
+331|Add loan
+332|Every EMI,
+333|See what you pay in EMIs each month
+334|Know how many EMIs are left
+335|Get a reminder before each due date
+336|Add a loan
+337|{0} left to pay
+338|Jan
+339|Feb
+340|Mar
+341|Apr
+342|May
+343|Jun
+344|Jul
+345|Aug
+346|Sep
+347|Oct
+348|Nov
+349|Dec
+350|EMIs already recorded stay in your expenses.
+351|Reopen
+352|Mark as closed
+353|{0}% paid
+354|{0} of {1} EMIs paid
+355|Closed
+356|Ends {0}
+357|Next EMI
+358|{0} · paid this month
+359|Pay EMI
+360|Add a bank account first
+361|Pay EMI · {0}
+362|Amount
+363|Paid from
+364|Date
+365|Record
+366|None
+367|Enter the EMI amount
+368|Enter the number of EMIs
+369|EMIs already paid is not valid
+370|Enter a valid loan amount
+371|Edit loan
+372|e.g. Home loan, Bike, Phone EMI
+373|Bank or lender (optional)
+374|EMI per month
+375|Total number of EMIs
+376|e.g. 36
+377|First EMI date
+378|EMIs already paid
+379|Usually paid from
+380|Choose later
+381|Loan amount (optional)
+382|Interest rate % (optional)
+383|Debt-free by {0}
+384|Each bar is what is left to pay at the start of a year.
+385|Each bar is what is left to pay at the start of a month.
+386|Money
+387|Plan
+388|Recurring
+389|Data
+390|Automatic (SMS, Gmail)
+391|Language
+392|Pay {0}
+393|Minimum due
+394|Pay using
+395|Get app
+396|Paid in {0}? Record the payment so your card balance stays correct.
+397|Record {0} payment
+398|Record a payment
+399|Record minimum {0}
+400|Record a different amount
+401|Enter a valid amount, e.g. 250 or 99.50
+402|Updated
+403|{0} of {1} saved · {2}
+404|{0} of {1} saved
+405|Take photo
+406|Choose from gallery
+407|Could not attach the photo: {0}
+408|New category
+409|Add a bank account, cash or a credit card first so that Rupio knows where the money comes from.
+410|Edit transaction
+411|Add transaction
+412|Category
+413|Investment
+414|New investment
+415|From
+416|Card
+417|Paid into (leave empty if reinvested)
+418|To
+419|Note (optional), e.g. Lunch
+420|Add receipt
+421|Receipt
+422|Repeat
+423|Does not repeat
+424|Recurring entry
+425|Update
+426|Add an account first.
+427|Add a credit card first.
+428|The photo is no longer on this phone.
+429|Nothing repeats yet. When you add rent, a SIP, a subscription or salary, turn on "Repeat" and it will be recorded for you on each due date.
+430|Fixed monthly outgoings
+431|Entries are added automatically when you open the app on or after the due date. Deleting a rule keeps entries already recorded.
+432|{0} · next {1}
+433|Paused
+434|Pause
+435|Resume
+436|Restore from backup?
+437|Everything currently in the app will be replaced by the backup. Make a backup first if you are not sure.
+438|Choose backup file
+439|Backup restored
+440|Change the app language
+441|Automatic
+442|Auto-detect from SMS, statements & Gmail
+443|Bank SMS on{0}
+444|Fill cards and accounts from bank messages
+445|Planning
+446|Monthly limits per category
+447|{0} categories
+448|Recurring entries
+449|Rent, SIPs, subscriptions, salary
+450|{0} active
+451|Reminders
+452|Card dues 7 and 3 days before and on the day; recurring entries on their date (9 AM)
+453|Appearance
+454|Auto
+455|Light
+456|Dark
+457|Update mutual fund prices
+458|Latest NAV from AMFI for linked funds (needs internet)
+459|Your data
+460|Export transactions (CSV)
+461|Open in Excel or Google Sheets
+462|Monthly summary (CSV)
+463|This month by category, with budgets
+464|Import bank statement
+465|CSV from net banking; duplicates are skipped
+466|Excel report (.xlsx)
+467|Transactions, accounts, cards, investments and budgets
+468|PDF report
+469|A printable summary with every transaction
+470|Back up
+471|Everything, to restore later (Drive, email or a file)
+472|Restore from backup
+473|Replace the data in this app
+474|About
+475|Private by design
+476|Your data stays on this phone. Nothing is sent anywhere unless you share or back it up yourself. Receipt photos are not included in backups.
+477|Spent {0}
+478|Deleted {0}
+479|Undo
+480|Search: petrol, 250, SBI…
+481|Clear
+482|No transactions yet. Tap + to add one.
+483|Nothing matches.
+484|{0} new
+485|{0} linked
+486|1 bill
+487|{0} bills
+488|1 new card/account found
+489|{0} new cards/accounts found
+490|Everything is up to date
+491|{0} · day {1}\n{2}
+492|Refund · {0}
+493|Transfer
+494|Bill paid · {0}
+495|card
+496|Withdrawn · {0}
+497|Income · {0}
+498|Reinvested
+499|From {0}
+500|Savings account
+501|Cash in hand
+502|UPI / wallet
+503|Mutual fund / SIP
+504|Stocks
+505|PPF
+506|NSC
+507|Fixed deposit
+508|Recurring deposit
+509|Post Office scheme
+510|NPS
+511|Gold / SGB
+512|Other
+513|Card bill
+514|Refund
+515|Invest
+516|Withdraw
+517|Dividend / interest
+518|Every week
+519|Every month
+520|Every year
+521|Food
+522|Groceries
+523|Transport
+524|Fuel
+525|Shopping
+526|Bills
+527|Rent
+528|Health
+529|Entertainment
+530|Travel
+531|Education
+532|EMI
+533|Salary
+534|Interest
+535|Business
+536|Gift
+537|January
+538|February
+539|March
+540|April
+541|June
+542|July
+543|August
+544|September
+545|October
+546|November
+547|December
+548|Mon
+549|Tue
+550|Wed
+551|Thu
+552|Fri
+553|Sat
+554|Sun
+555|Bal
+556|Owed
+557|tracked.
+558|Expense Tracker
+559|Automatic (statements)
+560|Auto-detect from statement PDFs
+561|Fill cards and accounts from bank statements
+562|{0} new found
+563|Know where every
+564|rupee goes
+565|Your month in one number and one clear graph. Red for spending, green for income.
+566|Never miss a
+567|card bill
+568|Bills, due dates and reminders for every credit card.
+569|Every EMI and goal,
+570|tracked
+571|See the EMIs left, the month you become debt-free and how much to save.
+572|Private, offline,
+573|in your language
+574|No sign-up and no bank login. Your data stays on your phone.
+575|Skip
+576|Get started
+577|Choose when you started investing this amount
+578|Started investing on
+579|After 1 year
+580|Add start date
+581|Description
+582|Fewer details
+583|More details
+584|Backup & import
+585|Backup data
+586|Import data
+587|Restore a Rupio backup file
+588|Export
+589|Daily reminder
+590|A nudge to add the day's expenses
+591|Add today's expenses
+592|Takes a few seconds and keeps your month accurate.
+593|Off
+594|Other time

@@ -1,0 +1,54 @@
+Rupio shows you where every rupee goes – with clear graphs, card bill and EMI reminders, and nothing leaving your phone.
+
+SEE YOUR MONEY AT A GLANCE
+• One big number for this month, this year or all time
+• Red bars for spending, green for income – tap any bar to see the amount
+• Go back through months and years, and open any month to see its days
+• "31% of your income goes to EMIs" – where your income really goes, in one bar
+• Net worth: accounts, investments, card dues, EMIs and savings goals together
+
+ADD A SPEND IN SECONDS
+• Amount, category, account or card – done
+• Remembers your last category and account
+• Receipt photos, notes and repeating entries (rent, SIPs, subscriptions, salary)
+• Search and filters for every transaction
+
+CREDIT CARDS
+• Bill, minimum due, due date, limit used and available credit for each card
+• Reminders 7 days and 3 days before and on the due date
+• Pay bill opens CRED, PhonePe, Google Pay, Paytm, Amazon Pay or BHIM
+
+LOANS & EMIs
+• Home, car, bike, personal or phone EMIs
+• EMIs paid and left, next due date and the month you become debt-free
+• A payoff graph of what is left to pay
+
+SAVINGS GOALS
+• Emergency fund, new phone, bike, trip or wedding
+• See how much to put aside each month to reach your goal on time
+
+INVESTMENTS
+• Mutual funds and SIPs, stocks, PPF, NSC, FDs, RDs, Post Office schemes, NPS and gold
+• Gain, return % and yearly return (XIRR)
+• Mutual funds can follow the daily NAV published by AMFI
+
+BUDGETS & INSIGHTS
+• Monthly budget per category with warnings at 80% and when crossed
+• Spending pace vs last month, no-spend streaks and daily average
+
+STATEMENTS
+• Open or share a bank or card statement PDF (password-protected is fine) to fill in transactions
+• Import CSV statements from net banking, with duplicates skipped
+
+YOUR DATA, YOUR PHONE
+• No sign-up, no bank login
+• Everything stays on your phone
+• Excel and PDF reports, CSV export, and backup & restore
+
+HOME SCREEN WIDGET
+• This month's spending with a bar for every day
+
+LANGUAGES
+English, हिन्दी, ಕನ್ನಡ, മലയാളം, தமிழ், తెలుగు
+
+Made in India, for rupees.
