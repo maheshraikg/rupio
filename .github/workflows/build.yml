@@ -111,6 +111,12 @@ jobs:
         with:
           name: rupio-store-assets
 
+      # Present only when the upload key secrets are set.
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: rupio-play-bundle
+
       - name: Upload to the latest-build release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -135,4 +141,10 @@ jobs:
           gh release upload "$APK_TAG" Rupio.apk --clobber
           # Store graphics and texts for the Play Console, one download.
           gh release upload "$APK_TAG" Rupio-store-assets.zip --clobber
+          # The signed bundle for the Play Console, as a plain .aab file.
+          if [ -f app-play-release.aab ]; then
+            mv app-play-release.aab Rupio.aab
+            gh release upload "$APK_TAG" Rupio.aab --clobber
+            echo "Play bundle: https://github.com/$GH_REPO/releases/download/$APK_TAG/Rupio.aab" >> "$GITHUB_STEP_SUMMARY"
+          fi
           echo "Direct download: https://github.com/$GH_REPO/releases/download/$APK_TAG/Rupio.apk" >> "$GITHUB_STEP_SUMMARY"
