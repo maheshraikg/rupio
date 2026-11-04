@@ -12,6 +12,7 @@ ADD A SPEND IN SECONDS
 • Remembers your last category and account
 • Receipt photos, notes and repeating entries (rent, SIPs, subscriptions, salary)
 • Search and filters for every transaction
+• A daily reminder at the time you choose
 
 CREDIT CARDS
 • Bill, minimum due, due date, limit used and available credit for each card
@@ -43,12 +44,16 @@ STATEMENTS
 YOUR DATA, YOUR PHONE
 • No sign-up, no bank login
 • Everything stays on your phone
-• Excel and PDF reports, CSV export, and backup & restore
+• Excel and PDF reports, CSV export
+• Backup data and Import data, to move to a new phone
 
 HOME SCREEN WIDGET
 • This month's spending with a bar for every day
 
 LANGUAGES
 English, हिन्दी, ಕನ್ನಡ, മലയാളം, தமிழ், తెలుగు
+
+HELP
+• Contact support or report a bug right from Settings
 
 Made in India, for rupees.
