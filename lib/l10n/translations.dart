@@ -596,6 +596,8 @@ const Map<String, Map<String, String>> translations = {
     'Tell us what went wrong; app and phone details are added': 'बताएं क्या गलत हुआ; ऐप और फ़ोन की जानकारी अपने आप जुड़ जाती है',
     'Delete this entry?': 'यह एंट्री हटाएं?',
     '{0} of {1} on {2}': '{2} को {0}: {1}',
+    'Tip: swipe an entry left to delete it': 'सुझाव: किसी एंट्री को हटाने के लिए उसे बाईं ओर स्वाइप करें',
+    'Got it': 'समझ गया',
   },
   'kn': {
     '{0} bill due today': '{0} ಬಿಲ್ ಇಂದು ಪಾವತಿಸಬೇಕು',
@@ -1190,6 +1192,8 @@ const Map<String, Map<String, String>> translations = {
     'Tell us what went wrong; app and phone details are added': 'ಏನು ತಪ್ಪಾಯಿತು ಎಂದು ತಿಳಿಸಿ; ಆ್ಯಪ್ ಮತ್ತು ಫೋನ್ ವಿವರಗಳು ಸೇರುತ್ತವೆ',
     'Delete this entry?': 'ಈ ನಮೂದನ್ನು ಅಳಿಸುವುದೇ?',
     '{0} of {1} on {2}': '{2} ರಂದು {0}: {1}',
+    'Tip: swipe an entry left to delete it': 'ಸಲಹೆ: ನಮೂದನ್ನು ಅಳಿಸಲು ಅದನ್ನು ಎಡಕ್ಕೆ ಸ್ವೈಪ್ ಮಾಡಿ',
+    'Got it': 'ಅರ್ಥವಾಯಿತು',
   },
   'ml': {
     '{0} bill due today': '{0} ബിൽ ഇന്ന് അടയ്ക്കണം',
@@ -1784,6 +1788,8 @@ const Map<String, Map<String, String>> translations = {
     'Tell us what went wrong; app and phone details are added': 'എന്താണ് തെറ്റിയതെന്ന് പറയൂ; ആപ്പ്, ഫോൺ വിവരങ്ങൾ ചേർക്കും',
     'Delete this entry?': 'ഈ എൻട്രി ഇല്ലാതാക്കണോ?',
     '{0} of {1} on {2}': '{2} ന് {0}: {1}',
+    'Tip: swipe an entry left to delete it': 'ടിപ്പ്: ഒരു എൻട്രി ഇല്ലാതാക്കാൻ അത് ഇടത്തേക്ക് സ്വൈപ്പ് ചെയ്യുക',
+    'Got it': 'മനസ്സിലായി',
   },
   'ta': {
     '{0} bill due today': '{0} பில் இன்று செலுத்த வேண்டும்',
@@ -2378,6 +2384,8 @@ const Map<String, Map<String, String>> translations = {
     'Tell us what went wrong; app and phone details are added': 'என்ன தவறு நடந்தது என்று சொல்லுங்கள்; செயலி மற்றும் ஃபோன் விவரங்கள் சேர்க்கப்படும்',
     'Delete this entry?': 'இந்தப் பதிவை நீக்கவா?',
     '{0} of {1} on {2}': '{2} அன்று {0}: {1}',
+    'Tip: swipe an entry left to delete it': 'குறிப்பு: ஒரு பதிவை நீக்க அதை இடதுபுறம் ஸ்வைப் செய்யவும்',
+    'Got it': 'புரிந்தது',
   },
   'te': {
     '{0} bill due today': '{0} బిల్లు ఈరోజు చెల్లించాలి',
@@ -2972,5 +2980,7 @@ const Map<String, Map<String, String>> translations = {
     'Tell us what went wrong; app and phone details are added': 'ఏమి తప్పు జరిగిందో చెప్పండి; యాప్, ఫోన్ వివరాలు జోడించబడతాయి',
     'Delete this entry?': 'ఈ ఎంట్రీని తొలగించాలా?',
     '{0} of {1} on {2}': '{2}న {0}: {1}',
+    'Tip: swipe an entry left to delete it': 'చిట్కా: ఎంట్రీని తొలగించడానికి దాన్ని ఎడమవైపుకు స్వైప్ చేయండి',
+    'Got it': 'అర్థమైంది',
   },
 };

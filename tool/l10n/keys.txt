@@ -599,3 +599,5 @@
 599|Tell us what went wrong; app and phone details are added
 600|Delete this entry?
 601|{0} of {1} on {2}
+602|Tip: swipe an entry left to delete it
+603|Got it

@@ -77,6 +77,9 @@ class FinanceStore extends ChangeNotifier {
   /// The first-run feature tour has been seen (or skipped).
   bool onboarded = false;
 
+  /// The swipe-left-to-delete hint has been shown once.
+  bool swipeHintSeen = false;
+
   /// Black theme by default.
   ThemeMode themeMode = ThemeMode.dark;
 
@@ -168,6 +171,7 @@ class FinanceStore extends ChangeNotifier {
     // People who already use the app never see the tour.
     onboarded =
         (j['onboarded'] as bool?) ?? (accounts.isNotEmpty || cards.isNotEmpty);
+    swipeHintSeen = (j['swipeHintSeen'] as bool?) ?? false;
     setCurrentLanguage(language);
     _nextId = (j['nextId'] as int?) ?? 1;
     // Before v2 the theme was never chosen explicitly ('system' was the
@@ -200,6 +204,7 @@ class FinanceStore extends ChangeNotifier {
     'goals': _goals.map((e) => e.toJson()).toList(),
     'language': language,
     'onboarded': onboarded,
+    if (swipeHintSeen) 'swipeHintSeen': true,
     'nextId': _nextId,
     'theme': themeMode.name,
     'themeV2': true,
@@ -750,6 +755,11 @@ class FinanceStore extends ChangeNotifier {
 
   Future<void> setThemeMode(ThemeMode mode) {
     themeMode = mode;
+    return _save();
+  }
+
+  Future<void> markSwipeHintSeen() {
+    swipeHintSeen = true;
     return _save();
   }
 

@@ -5,6 +5,7 @@ import '../ledger/ledger.dart';
 import '../models/models.dart';
 import '../models/money.dart';
 import '../widgets/common.dart';
+import '../widgets/swipe_delete.dart';
 import 'quick_add_sheet.dart';
 import '../l10n/strings.dart';
 
@@ -110,29 +111,9 @@ class _TransactionsScreenState extends State<TransactionsScreen> {
         );
       }
       children.add(
-        Dismissible(
-          key: ValueKey(t.id),
-          direction: DismissDirection.endToStart,
-          background: Container(
-            color: Theme.of(context).colorScheme.errorContainer,
-            alignment: Alignment.centerRight,
-            padding: const EdgeInsets.only(right: 24),
-            child: const Icon(Icons.delete),
-          ),
-          onDismissed: (_) {
-            store.deleteTxn(t.id);
-            ScaffoldMessenger.of(context)
-              ..clearSnackBars()
-              ..showSnackBar(
-                SnackBar(
-                  content: Text(tr('Deleted {0}', [formatRupees(t.amount)])),
-                  action: SnackBarAction(
-                    label: tr('Undo'),
-                    onPressed: () => store.restoreTxn(t),
-                  ),
-                ),
-              );
-          },
+        SwipeToDelete(
+          txn: t,
+          hint: children.length == 1 && !store.swipeHintSeen,
           child: TxnTile(
             t,
             showDate: false,

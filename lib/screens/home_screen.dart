@@ -7,6 +7,7 @@ import '../models/money.dart';
 import '../widgets/charts.dart';
 import '../widgets/common.dart';
 import '../widgets/design.dart';
+import '../widgets/swipe_delete.dart';
 import 'accounts_screen.dart';
 import 'auto_detect_screen.dart';
 import 'budgets_screen.dart';
@@ -375,8 +376,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 )
               else
-                for (final group in groupByDay(entries))
-                  _DayGroup(day: group.$1, txns: group.$2),
+                for (final (i, group) in groupByDay(entries).indexed)
+                  _DayGroup(
+                    day: group.$1,
+                    txns: group.$2,
+                    hintFirst: i == 0 && !context.store.swipeHintSeen,
+                  ),
             ],
           ],
         ),
@@ -399,9 +404,16 @@ List<(DateTime, List<Txn>)> groupByDay(List<Txn> txns) {
 }
 
 class _DayGroup extends StatelessWidget {
-  const _DayGroup({required this.day, required this.txns});
+  const _DayGroup({
+    required this.day,
+    required this.txns,
+    this.hintFirst = false,
+  });
   final DateTime day;
   final List<Txn> txns;
+
+  /// Show the swipe-to-delete hint on the first entry.
+  final bool hintFirst;
 
   @override
   Widget build(BuildContext context) {
@@ -428,11 +440,15 @@ class _DayGroup extends StatelessWidget {
             ],
           ),
         ),
-        for (final x in txns)
-          TxnTile(
-            x,
-            showDate: false,
-            onTap: () => showQuickAdd(context, initial: x),
+        for (final (i, x) in txns.indexed)
+          SwipeToDelete(
+            txn: x,
+            hint: hintFirst && i == 0,
+            child: TxnTile(
+              x,
+              showDate: false,
+              onTap: () => showQuickAdd(context, initial: x),
+            ),
           ),
       ],
     );

@@ -102,6 +102,37 @@ void main() {
     expect(store.ledger.txns.single.id, t.id);
   });
 
+  testWidgets('home shows the swipe hint once, and swiping deletes', (
+    tester,
+  ) async {
+    final store = FinanceStore.memory();
+    await store.addAccount('SBI Savings', AccountKind.savings, 1000000);
+    await tester.pumpWidget(RupeeTrackApp(store: store, background: false));
+    await tester.tap(find.byType(FloatingActionButton));
+    await tester.pumpAndSettle();
+    await tester.enterText(find.byType(TextField).first, '250');
+    await tester.tap(find.widgetWithText(ChoiceChip, 'Food'));
+    await tester.tap(find.text('Save'));
+    await tester.pumpAndSettle();
+
+    expect(store.swipeHintSeen, isTrue);
+    // The tip waits for the "saved" message to go away.
+    await tester.pump(const Duration(seconds: 5));
+    await tester.pumpAndSettle();
+    expect(find.text('Tip: swipe an entry left to delete it'), findsOneWidget);
+
+    await tester.tap(find.text('Got it'));
+    await tester.pumpAndSettle();
+    // The entries are at the bottom of Home.
+    await tester.drag(find.byType(Scrollable).first, const Offset(0, -3000));
+    await tester.pumpAndSettle();
+    final row = find.byType(Dismissible).first;
+    await tester.fling(row, const Offset(-500, 0), 2000);
+    await tester.pumpAndSettle();
+    expect(store.ledger.txns, isEmpty);
+    expect(find.text('Undo'), findsOneWidget);
+  });
+
   testWidgets('quick add rejects an empty amount', (tester) async {
     final store = FinanceStore.memory();
     await store.addAccount('Cash', AccountKind.cash, 0);
